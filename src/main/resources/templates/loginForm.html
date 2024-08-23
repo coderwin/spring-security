@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 페이지</title>
+</head>
+<body>
+
+<h1>로그인 페이지</h1>
+<hr/>
+<form action="login" method="post">
+
+    <input type="text" name="username" placeholder="Username" />
+
+<!--
+
+    아래는 sequrity가 실행되다가 에러 발생? username이라고 설정 안 되어 있어서
+    -> security config에서 username2로 변경해줘야한다.
+        .usernameParameter("username2")
+-->
+<!--    <input type="text" name="username2" placeholder="Username" />-->
+    <input type="password" name="password" placeholder="Password" />
+    <button>로그인</button>
+
+
+
+</form>
+
+<a href="/joinForm">회원가입을 아직 하지 않으셨나요?</a>
+
+</body>
+</html>
