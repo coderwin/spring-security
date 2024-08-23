@@ -35,3 +35,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+
+## yml 업데이트 안 하기
+/src/**/resources/**/*.yml
