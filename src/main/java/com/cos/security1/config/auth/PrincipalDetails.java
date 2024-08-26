@@ -14,13 +14,16 @@ import java.util.Map;
 public class PrincipalDetails implements UserDetails, OAuth2User {
 
     private User user;// 콤포지션
+    private Map<String, Object> attributes;
 
     public PrincipalDetails(User user) {
         this.user = user;
     }
 
-
-
+    public PrincipalDetails(User user, Map<String, Object> attributes) {
+        this.user = user;
+        this.attributes = attributes;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -75,11 +78,15 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
 
     @Override
     public Map<String, Object> getAttributes() {
-        return null;
+        return attributes;
     }
     @Override
     public String getName() {
-        return null;
+        // id 값을 return 한다.
+        return String.valueOf(attributes.get("sub"));
+
+        // 보통 null
+//        return null;
     }
 
     // OAuth2User implement methods 끝

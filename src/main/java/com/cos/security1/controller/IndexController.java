@@ -133,5 +133,14 @@ public class IndexController {
         return "data";
     }
 
+    @GetMapping("/test/user")
+    @ResponseBody
+    public String user(@AuthenticationPrincipal PrincipalDetails principalDetails) {
+
+        System.out.println("principalDetails: " + principalDetails.getUser());
+
+        return "user";
+
+    }
 
 }
